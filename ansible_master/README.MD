@@ -17,7 +17,7 @@ You need to create `IAM User` with Access Key and Secret with permission that ca
 
 `ansibleadmin` user will be created and will be use for ansible purpose.
 
-[Vault Variable] (playbook/roles/ansible-master-setup/vars/vault) is left unencrypted but in real after replace credentials it should be encrypted. You can use below command to do that
+[Vault Variable](playbook/roles/ansible-master-setup/vars/vault) is left unencrypted but in real after replace credentials it should be encrypted. You can use below command to do that
 
 ```
 ansible-vault encrypt --vault-password-file=REPLACEWITHPASSWORDFIE playbook/roles/ansible-master-setup/vars/vault
@@ -68,11 +68,11 @@ ansible -i ec2.py -m ping tag_Name_Ansible_Slave
 
 ## References
 
-[AWS Dynamic Inventory] (https://aws.amazon.com/blogs/apn/getting-started-with-ansible-and-dynamic-amazon-ec2-inventory-management/)
+[AWS Dynamic Inventory](https://aws.amazon.com/blogs/apn/getting-started-with-ansible-and-dynamic-amazon-ec2-inventory-management/)
 
 
-[Ansible Dynamic Inventory] (https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html)
+[Ansible Dynamic Inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html)
 
-[Setup Terraform] (https://learn.hashicorp.com/terraform/getting-started/install.html)
+[Setup Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html)
 
-[Creating IAM User] (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console)
+[Creating IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console)

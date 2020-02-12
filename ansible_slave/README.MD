@@ -13,7 +13,7 @@ Your machine from where you running this project need to install below things.
 1. Terraform
 2. Ansible
 
-You need to create `IAM User` with Access Key and Secret with permission that can create resources on AWS. Also, you need to create a `SSH KEY` on AWS which you will be using to login into the server.
+You need to create `IAM User` with Access Key and Secret with permission that can create resources on AWS. You can use same credentials used for Ansible Master if you want to. Also, you need to create a `SSH KEY` on AWS which you will be using to login into the server.
 
 `ansibleadmin` user will be created and added to Sudoers file in order to have root access.
 
@@ -53,6 +53,6 @@ terraform apply
 
 ## References
 
-[Setup Terraform] (https://learn.hashicorp.com/terraform/getting-started/install.html)
+[Setup Terraform](https://learn.hashicorp.com/terraform/getting-started/install.html)
 
-[Creating IAM User] (https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console)
+[Creating IAM User](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html#id_users_create_console)

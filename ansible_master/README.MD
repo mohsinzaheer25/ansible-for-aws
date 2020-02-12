@@ -68,7 +68,7 @@ ansible -i ec2.py -m ping tag_Name_Ansible_Slave
 
 ## References
 
-[AWS Dynamic Inventory](https://aws.amazon.com/blogs/apn/getting-started-with-ansible-and-dynamic-amazon-ec2-inventory-management/)
+[AWS Setup With Dynamic Inventory](https://aws.amazon.com/blogs/apn/getting-started-with-ansible-and-dynamic-amazon-ec2-inventory-management/)
 
 
 [Ansible Dynamic Inventory](https://docs.ansible.com/ansible/latest/user_guide/intro_dynamic_inventory.html)

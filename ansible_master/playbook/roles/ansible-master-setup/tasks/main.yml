@@ -1,0 +1,54 @@
+---
+
+- name: Include Variables
+  include_vars:
+    file: "{{ item }}"
+  with_items:
+    - var
+    - vault
+
+- name: Create Ansibleadmin User
+  user:
+    name: ansibleadmin
+    shell: /bin/bash
+
+- name: Generate SSH Key for Ansibleadmin
+  # shell: sudo -u ansibleadmin bash -c "printf '\n' | ssh-keygen -N ''"
+  shell: bash -c "printf '\n' | ssh-keygen -N ''"
+  become: true
+  become_user: ansibleadmin
+  ignore_errors: true
+
+- name: Create AWS Folder
+  file:
+    path: /home/ansibleadmin/.aws
+    state: directory
+    owner: ansibleadmin
+    group: ansibleadmin
+
+- name: Copy Config & Credentials
+  template:
+    src: "{{ item }}"
+    dest: /home/ansibleadmin/.aws/{{ item | basename | regex_replace('\.j2','') }}
+    owner: ansibleadmin
+    group: ansibleadmin
+    mode: 0600
+  with_items:
+    - config.j2
+    - credentials.j2
+
+- name: Download Dynamic Inventory
+  get_url:
+    url: "{{ item }}"
+    dest: /home/ansibleadmin/
+  with_items:
+    - 'https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.py'
+    - 'https://raw.githubusercontent.com/ansible/ansible/devel/contrib/inventory/ec2.ini'
+
+- name: Change Permission Of Dynamic Inventory
+  file:
+    path: /home/ansibleadmin/ec2.py
+    mode: 0755
+
+
+  

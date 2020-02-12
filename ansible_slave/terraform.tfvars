@@ -1,0 +1,7 @@
+access_key       = "REPLACEMEWITHACCESSKEY"
+secret_key       = "REPLACEMEWITHSECRET"
+name             = "Ansible Slave"
+type             = "Ansible Slave"
+environment      = "Dev"
+user             = "ubuntu"
+private_key_path = "REPLACEMEWITHPRIVATEKEYPATH"

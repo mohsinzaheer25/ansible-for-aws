@@ -1,0 +1,20 @@
+---
+
+- name: Create Ansibleadmin User
+  user:
+    name: ansibleadmin
+    shell: /bin/bash
+
+- name: Set authorized key for ansibleadmin
+  authorized_key:
+    user: ansibleadmin
+    state: present
+    key: "{{ public_key }}"
+
+- name: Configure Sudo Access
+  copy:
+    content: "{{ sudo_access_content }}"
+    dest: /etc/sudoers.d/ansible_admin
+    owner: root
+    group: root
+    mode: 0440

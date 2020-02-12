@@ -1,0 +1,8 @@
+access_key       = "REPLACEMEWITHACCESSKEY"
+secret_key       = "REPLACEMEWITHSECRET"
+name             = "Ansible Master"
+type             = "Ansible Master"
+environment      = "Operations"
+role             = "Maintenance"
+user             = "ubuntu"
+private_key_path = "REPLACEMEWITHPRIVATEKEYPATH"
